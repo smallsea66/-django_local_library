@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ author.last_name}},{{ author.first_name}}</h1>
+  <div>{{author.date_of_birth}}</div>
+  <a href="{% url 'author_delete' author.pk %}">delete</a>
+  <a href="{% url 'author_update' author.pk  %}">update</a>
+
+  <h3>Books</h3>
+    <p>{{author.get_context_data}}</p>
+
+{% endblock %}
